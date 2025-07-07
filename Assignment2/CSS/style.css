@@ -17,7 +17,7 @@ body{
     justify-content:space-evenly;
     align-items: center; /* Aligns items vertically */
     margin-bottom: 80px;
-    gap:1300px;
+    gap:1400px;
 
 }
 
@@ -277,6 +277,7 @@ display: flex;
   list-style: none;
   display: flex;
   gap: 30px; /* space between icons */
+  margin-bottom: 10px;
 }
 
 .socialMedia li img {
