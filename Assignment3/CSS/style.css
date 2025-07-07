@@ -1,0 +1,286 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.navHead {
+    padding: 32px 32px;
+    display: flex;
+    justify-content: space-between;   
+
+}
+
+.imgLogo img {
+    width: 71px;
+    height: 26px;
+    background-color: black;
+}
+
+.navBar {
+      text-align: right;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+   gap: 8px;
+    
+}
+
+.navList li a {
+    text-decoration: none;
+    color: rgb(32, 22, 22);
+    padding: 8px 24px 8px 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    color: #FFFFFF;
+  
+}
+
+.bannerBack{
+    padding: 150px;
+    background: url("/Images/Rectangle\ 1.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: -90px;
+    margin-bottom: 128px;
+
+}
+
+.bannerData{
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+.bannerData h1{
+    color: white;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 140%;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.bannerData p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    align-items: center;
+    color: #FFFFFF;
+    opacity: 75%;
+    margin-bottom: 64px;
+}
+
+.servicesSection {
+  padding:10px;
+  margin-bottom: 128px;
+}
+
+.sectionText{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 64px;
+}
+
+.sectionText span{
+  color: #a25bfc;
+  letter-spacing: 8px;
+  font-weight: 600; 
+ 
+}
+
+.sectionText h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  line-height: 120%;
+
+}
+
+.servicesContainer {
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+.icon {
+  background-color: #a25bfc;
+  color: white;
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.serviceBox h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight:600;
+  font-size: 18px;
+  line-height: 120%;
+  align-items: center;
+}
+
+.serviceBox p {
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+  line-height: 140%;
+  color: #666;
+}
+
+
+.text ul li{
+    list-style: none;
+    
+}
+
+
+.featureText{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 60px;
+    margin-bottom: 126px;
+}
+
+
+.text span{
+    /* Feature 1 */
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 120%;
+
+letter-spacing: 0.4em;
+text-transform: uppercase;
+
+/* Brand */
+color: #6C00FF;
+margin-bottom: 16px;
+
+}
+
+.text h2{
+    /* Designed for individuals */
+font-style: normal;
+font-weight: 500;
+font-size: 44px;
+line-height: 120%;
+/* or 53px */
+
+/* Dark */
+color: #222831;
+margin-bottom: 32px;
+
+
+}
+
+.text p{
+    /* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. */
+font-family: 'Matter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+
+/* Medium */
+color: #393E46;
+
+opacity: 0.75;
+margin-bottom: 32px;
+
+}
+.featureList li{
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 7px;
+gap: 16px;
+
+
+
+}
+
+.imageContainer img{
+    width: 475px;
+    height: 400px;
+    box-shadow: 20px 20px 1px #6C00FF;
+}
+
+.footerList {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 8px;
+opacity: 0.75;
+border-radius: 100px;
+
+}
+
+.footerList li{
+list-style: none;
+padding: 8px 24px 8px 24px;
+}
+
+.footerList li a{
+text-decoration: none;
+color:#393E46;
+
+}
+
+.footerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 128px;
+}
+
+.footerContent img{
+    width: 71px;
+    height: 26px;
+}
+.footerContent > span{
+    /* Copyright © 2023 Destiny Inc. All Rights Reserved. */
+
+
+
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+
+/* Medium */
+color: #393E46;
+
+
+}
