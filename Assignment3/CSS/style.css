@@ -47,6 +47,7 @@ body{
     font-weight: 400;
     line-height: 140%;
     color: #FFFFFF;
+    cursor: pointer;
   
 }
 
@@ -58,6 +59,10 @@ body{
 
 
 
+
+ .navList li a:hover {
+    color: #7133d6; 
+}
 .bannerBack{
     width: 100%;
     background: url("/Images/Rectangle\ 1.png");
@@ -276,7 +281,7 @@ gap: 16px;
 }
 
 .featureContent{
-    margin: 0 32px;
+ margin:0 32px;
   
 }
 
