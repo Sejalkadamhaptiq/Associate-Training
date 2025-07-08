@@ -209,8 +209,8 @@ color: #FFFFFF;
 
 .featureText{
     display: flex;
-    justify-content: space-evenly;
-    gap:127px;
+    flex-direction: row;
+    gap:100px;
     margin-bottom: 126px;
 }
 
@@ -274,7 +274,10 @@ gap: 16px;
 
 }
 
-
+.featureContent{
+    padding: 0 40px;
+    overflow: hidden;
+}
 
 .imageContainer img{
     width: 475px;
@@ -283,11 +286,13 @@ gap: 16px;
 }
 
 .featureText:first-child .imageContainer img {
-    box-shadow: 32px 32px 1px blueviolet;
+    box-shadow: 32px 32px 1px #6C00FF;
+
 }
  
 .featureText:nth-child(2) .imageContainer img {
-    box-shadow: -32px -32px 1px blueviolet;
+    box-shadow: -32px -32px 1px #6C00FF;
+   
 }
 .footerList {
 display: flex;
