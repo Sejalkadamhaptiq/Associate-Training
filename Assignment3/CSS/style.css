@@ -211,6 +211,7 @@ color: #FFFFFF;
     display: flex;
     flex-direction: row;
     gap:100px;
+     margin: 0 32px;
     margin-bottom: 126px;
 }
 
@@ -275,24 +276,25 @@ gap: 16px;
 }
 
 .featureContent{
-    padding: 0 40px;
-    overflow: hidden;
+    margin: 0 32px;
+  
 }
 
 .imageContainer img{
     width: 475px;
     height: 400px;
+    margin: 0 32px;
 
 }
 
 .featureText:first-child .imageContainer img {
     box-shadow: 32px 32px 1px #6C00FF;
-
+    margin: 32px 32px;
 }
  
 .featureText:nth-child(2) .imageContainer img {
     box-shadow: -32px -32px 1px #6C00FF;
-   
+    margin: 32px 32px;
 }
 .footerList {
 display: flex;
