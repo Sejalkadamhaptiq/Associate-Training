@@ -48,6 +48,13 @@ body{
   
 }
 
+.navList li:first-child a {
+    border-radius:50px; /* You can adjust the value */
+    border: 1px solid white ;
+   
+}
+
+
 .bannerBack{
     padding: 150px;
     background: url("/Images/Rectangle\ 1.png");
@@ -121,7 +128,7 @@ body{
 .servicesContainer {
   display: flex;
   flex-direction: row;
-
+  gap:80px;
 }
 
 
@@ -232,9 +239,13 @@ gap: 16px;
 .imageContainer img{
     width: 475px;
     height: 400px;
-    box-shadow: 20px 20px 1px #6C00FF;
+    box-shadow: 25px 25px 1px #6C00FF;
 }
-
+.imageContainer2 img{
+    width: 475px;
+    height: 400px;
+    box-shadow: -25px -25px 1px #6C00FF;
+}
 .footerList {
 display: flex;
 flex-direction: row;
