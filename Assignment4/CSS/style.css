@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Heebo:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* Basic Resets and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Header & Navigation */
+.main-header {
+   
+   margin-bottom: 36px;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar > span {
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+letter-spacing: 0.1px;
+color: #FFFFFF;
+
+}
+
+
+.nav-links ul {
+    list-style: none;
+   display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 21px;
+}
+
+
+.nav-links li a {
+
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+text-decoration: none;
+text-align: center;
+letter-spacing: 0.2px;
+
+color: #FFFFFF;
+
+
+}
+
+
+/* Optional: Underline on active/hover */
+.nav-buttons {
+    /* navbar-nav */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 45px;
+
+
+}
+
+
+.nav-buttons a {
+  
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 22px;
+text-decoration: none;
+/* identical to box height, or 157% */
+text-align: right;
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+
+   
+}
+
+.navMember{
+
+align-items: center;
+padding: 15px 25px;
+gap: 15px;
+background: #23A6F0;
+border-radius: 5px;
+
+}
+
+
+/* Hero Section */
+.heroSection {
+  
+    width: 100%;
+    background:/* filter */
+linear-gradient(89.85deg, #000000 0.13%, #000000 0.14%, rgba(0, 0, 0, 0) 99.56%),
+url("/Images/hello.jpg");
+    height: 100vh;
+    margin-top: -90px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Optional: background-blend-mode if you want to mix image and gradient colors */
+    /* background-blend-mode: multiply; */
+}
+
+.heroSection .container{
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+
+}
+.bannerContent{
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 35px;
+}
+.bannerContent h1 {
+
+font-style: normal;
+font-weight: 800;
+font-size: 58px;
+line-height: 80px;
+letter-spacing: 0.2px;
+color: #FFFFFF;
+
+}
+
+.bannerContent p {
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+}
+
+
+.bannerList{
+    /* button.btn.primary-color.btn-round */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+gap: 10px;
+
+}
+
+.bannerList li{
+    list-style: none;
+}
+
+.bannerList li:nth-child(1) {
+
+/* button.btn.primary-color.btn-round */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 15px 36px;
+gap: 10px;
+
+background: #23A6F0;
+border-radius: 37px;
+
+
+}
+
+.bannerList li:nth-child(2){
+  /* button.btn.primary-color.btn-outline.btn-round */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 15px 36px;
+gap: 10px;
+/* light-text-color */
+border: 1px solid #FFFFFF;
+border-radius: 37px;
+
+}
+
+.bannerList li a{
+
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 22px;
+/* identical to box height, or 157% */
+text-align: center;
+letter-spacing: 0.2px;
+text-decoration: none;
+/* light-text-color */
+color: #FFFFFF;
+align-items: center;
+
+}
+
+
+/* Features Section */
+.featuresSection {
+    background-color: #2b3240; /* Dark blue/gray background from image */
+    padding: 100px 0; /* Vertical padding for the section */
+    color: #cad6e0; /* Light gray-blue for text */
+    text-align: center;
+}
+
+.featuresGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; /* Gap between items when wrapping */
+align-items: center;
+padding: 40px 50px;
+gap: 30px;
+border-radius: 5px;
+
+}
+
+.featureItem {
+   /* card-item */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px 50px;
+border-radius: 5px;
+
+
+}
+
+.featureIcon {
+    /* Large icon size */
+    color: #4a90e2; /* Bright blue for icons */
+    margin-bottom: 29px; /* Space between icon and heading */
+}
+
+.featureItem h3 {
+ 
+
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+text-align: center;
+letter-spacing: 0.1px;
+
+/* light-text-color */
+color: #FFFFFF;
+margin-bottom: 10px;
+}
+
+.featureItem p {
+
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* or 143% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+
+    
+}
+
+/* Testimonials Section (Alternate Design) */
+.testimonialsSection{
+
+/* disabled-element-color */
+background: #8EC2F2;
+align-items: center;
+}
+
+.testimonialsHeader{
+   padding:112px 0 0 0;
+   margin-bottom: 80px;
+}
+
+.testimonialsHeader h2 {
+
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 57px;
+text-align: center;
+/* identical to box height, or 142% */
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+margin-bottom: 10px;
+
+
+}
+
+.testimonialsHeader p {
+
+
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* or 143% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+
+}
+
+.testimonialsGrid {
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+padding-bottom: 112px;
+gap: 90px;
+
+
+}
+
+.testimonialCard{
+ 
+align-items: flex-start;
+padding: 30px 40px;
+gap: 15px;
+
+background: #FFFFFF;
+
+}
+.clientImg{
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+}
+.clientImg img{
+
+    margin-bottom: 20px;
+    margin-left: -70px; /* Space below client info */
+}
+
+
+.clientDetails{
+    margin-bottom: 15px;
+}
+
+.clientDetails h3 {
+
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+letter-spacing: 0.1px;
+
+/* text-color */
+color: #252B42;
+
+
+}
+
+.clientdetails P{
+
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 171% */
+letter-spacing: 0.2px;
+
+/* second-text-color */
+color: #737373;
+
+}
+
+.stars{
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 5px;
+margin-bottom: 15px;
+
+}
+.stars li{
+    list-style: none;
+    /* icn bxs-star */
+
+
+}
+.checked{
+    color: orange;
+
+width: 22.01px;
+height: 22.01px;
+
+}
+.testimonialCard p{
+
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* or 143% */
+letter-spacing: 0.2px;
+
+/* second-text-color */
+color: #737373;
+
+}
+/* Content Cards Section */
+.contentSection {
+   background-color: #252B42;
+  padding: 112px 0;
+}
+.sectionHeader{
+    margin-bottom: 96px;
+}
+/* Reusing header styles from testimonials section, if they are identical */
+.sectionHeader h2{
+
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 57px;
+/* identical to box height, or 142% */
+text-align: center;
+letter-spacing: 0.2px;
+margin-bottom: 10px;
+/* light-text-color */
+color: #FFFFFF;
+
+
+}
+
+
+.sectionHeader p {
+ 
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* or 143% */
+text-align: center;
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+}
+.container .contentGrid{
+    width: 100%;
+    
+}
+.contentGrid{
+/* row */
+display: flex;
+flex-direction: row;
+justify-content:center;
+align-items: flex-start;
+padding: 0px 15px;
+gap: 70px;
+
+}
+
+.coontentCard{
+    /* card-content */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items:flex-end;
+padding: 10px 20px;
+gap: 15px;
+
+
+}
+.cardText{
+    /* card-content */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 10px 20px;
+gap: 15px;
+
+
+
+
+}
+.content-card {
+
+    border-radius: 10px;
+
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex; /* To contain the overlay and its content */
+    flex-direction: row;
+    
+}
+
+.card-overlay {
+    
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%); /* Dark gradient overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligns content to the bottom */
+    padding: 20px;
+    color: #fff;
+    text-align: left; /* Align text within the card to the left */
+}
+
+.card-category {
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.btn-card-project {
+    background-color: #4a90e2; /* Blue button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    align-self: flex-start; /* Align button to the left within the flex column */
+   
+}
+
+.cardText span{
+
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 171% */
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+
+
+}
+
+.cardText h3{
+
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+/* or 150% */
+letter-spacing: 0.2px;
+
+/* light-text-color */
+color: #FFFFFF;
+
+/* Text Shadow */
+text-shadow: 0px 13px 19px rgba(0, 0, 0, 0.24);
+
+}
+
+.cardText a{
+    /* button.btn.primary-color.btn-round */
+
+/* Auto layout */
+text-decoration: none;
+
+/* primary-color */
+background: #23A6F0;
+border-radius: 37px;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 22px;
+/* identical to box height, or 157% */
+text-align: center;
+letter-spacing: 0.2px;
+padding: 10px 36px 10px 36px;
+/* light-text-color */
+color: #FFFFFF;
+
+
+}
+
+.cardImg1{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%),url("/Images/media\ bg-cover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:329px;
+    height: 452px;
+    background-position: center center;
+    padding-top: 261px;
+   
+}
+
+.cardImg2{
+    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%), url("/Images/post2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:329px;
+    height: 452px;
+     padding-top: 261px;
+}
+
+
+.cardImg3{
+    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%), url("/Images/media\ bg-cover\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:329px;
+    height: 452px;
+       padding-top: 261px;
+}
+
+.cardImg4{
+    /* filter */
+
+
+
+    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%), url("/Images/post.4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:329px;
+    height: 452px;
+       padding-top: 261px;
+}
+
+
+/* Footer Section */
+.mainFooter {
+    background-color: #252b42; /* Dark blue/gray background */
+    padding: 80px 0; /* Vertical padding */
+    color: #fff; /* Default white text color for the footer */
+}
+
+.footerColumns {
+    display: flex;
+    justify-content: space-between; /* Distributes columns with space between */
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 30px; /* Space between columns */
+    max-width: 1200px; /* Max width for the columns container */
+    margin: 0 auto; /* Center the columns */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.footerColumn {
+    flex-basis: calc(20% - 30px); /* Approx 1/5th width for 5 columns, accounting for gap */
+    min-width: 180px; /* Minimum width for columns before wrapping */
+    text-align: left;
+}
+
+.columnTitle {
+   
+    font-size: 1.2em;
+    font-weight: 700; /* Bold as per design */
+    color: #fff; /* White title */
+    margin-bottom: 25px; /* Space below title */
+}
+
+.columnList {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+}
+
+.columnList li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.columnList li:last-child {
+    margin-bottom: 0; /* No margin for the last item */
+}
+
+.columnList a {
+    color: #cad6e0; /* Light gray-blue for links */
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.columnList a:hover {
+    color: #4a90e2; /* Blue on hover */
+}
+
+/* Specific styling for the contact list in 'Get In Touch' */
+.contactList li {
+    display: flex; /* Use flex to align icon and text */
+    align-items: center; /* Vertically center icon and text */
+    color: #cad6e0; /* Light gray-blue for contact text */
+}
+
+.contactList li i {
+    color: #4a90e2; /* Blue for icons */
+    font-size: 1.1em;
+    margin-right: 10px; /* Space between icon and text */
+}
