@@ -31,24 +31,8 @@ font-family: "Montserrat", sans-serif;
     padding-top:20px ;
 }
 
-
-.hamburger-menu {
-    display: none; /* Crucial: This hides the hamburger menu on larger screens */
-    flex-direction: column;
-    justify-content: space-around; /* Distributes the bars vertically */
-    width: 30px; /* Width of the entire icon */
-    height: 25px; /* Height of the entire icon */
-    cursor: pointer; /* Changes cursor to a pointer on hover, indicating it's clickable */
-    z-index: 20; /* Ensures it's always on top of other content if elements overlap */
-    margin-left: auto; /* Pushes the icon to the right side of the navbar */
-}
-
-.hamburger-menu .bar {
-    width: 100%; /* Each bar takes full width of its parent (.hamburger-menu) */
-    height: 3px; /* Thickness of each bar */
-    background-color: #FFFFFF; /* Color of the bars (white in your design) */
-    border-radius: 5px; /* Slightly rounded ends for the bars */
-    transition: all 0.3s ease; /* Smooth transition for the 'X' animation */
+.navbar i{
+    display: none;
 }
 
 
@@ -736,15 +720,40 @@ gap: 10px;
         padding: 0 15px;
     }
 
+    .main-header{
+ background-color: #252B42;
+ position: relative;
+    }
+.navbar i{
+   display:flex;
+   color: white;
+   position: absolute;
+   padding: 20px;
+    right:0;
+    top:0;
+
+}
+
+
+    .navbar{
+       display: flex;
+       flex-direction: column;
+      padding: 20px;
+
+
+    }
     /* Navbar */
     .navbar img { /* BrandName logo */
-        max-width: 180px;
-        height: auto;
+    height:30px;
+     margin: 0 auto 0 0;
+    }
+    .nav-links{
+     
+        
     }
     .nav-links ul {
-        flex-direction: column; /* Stack nav links */
-        gap: 10px;
-        margin-top: 10px;
+        flex-direction: column;
+    
     }
     .nav-buttons {
       display: none;
@@ -754,7 +763,7 @@ gap: 10px;
     /* Hero Section */
     .heroSection {
         height: 100vh; /* Might need to be taller for all content */
-        margin-top: -200px; /* Adjust if header height changes */
+        margin-top: -210px; /* Adjust if header height changes */
         padding-top: 80px; /* Push content down from top edge */
     }
     .bannerContent h1 {
