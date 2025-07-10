@@ -8,6 +8,7 @@
 
 body {
 font-family: "Montserrat", sans-serif;
+
 }
 
 .container {
@@ -18,7 +19,7 @@ font-family: "Montserrat", sans-serif;
 
 /* Header & Navigation */
 .main-header {
-   
+
    margin-bottom: 36px;
 
 }
@@ -27,16 +28,27 @@ font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top:20px ;
 }
 
-.navbar > span {
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 32px;
-letter-spacing: 0.1px;
-color: #FFFFFF;
 
+.hamburger-menu {
+    display: none; /* Crucial: This hides the hamburger menu on larger screens */
+    flex-direction: column;
+    justify-content: space-around; /* Distributes the bars vertically */
+    width: 30px; /* Width of the entire icon */
+    height: 25px; /* Height of the entire icon */
+    cursor: pointer; /* Changes cursor to a pointer on hover, indicating it's clickable */
+    z-index: 20; /* Ensures it's always on top of other content if elements overlap */
+    margin-left: auto; /* Pushes the icon to the right side of the navbar */
+}
+
+.hamburger-menu .bar {
+    width: 100%; /* Each bar takes full width of its parent (.hamburger-menu) */
+    height: 3px; /* Thickness of each bar */
+    background-color: #FFFFFF; /* Color of the bars (white in your design) */
+    border-radius: 5px; /* Slightly rounded ends for the bars */
+    transition: all 0.3s ease; /* Smooth transition for the 'X' animation */
 }
 
 
@@ -118,7 +130,8 @@ border-radius: 5px;
 linear-gradient(89.85deg, #000000 0.13%, #000000 0.14%, rgba(0, 0, 0, 0) 99.56%),
 url("/Images/hello.jpg");
     height: 100vh;
-    margin-top: -90px;
+    padding: 20px;
+    margin-top: -110px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -348,7 +361,7 @@ color: #FFFFFF;
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
-padding-bottom: 112px;
+padding:0 0 112px 148px;
 gap: 90px;
 
 
@@ -372,7 +385,7 @@ background: #FFFFFF;
 .clientImg img{
 
     margin-bottom: 20px;
-    margin-left: -70px; /* Space below client info */
+    margin-left: -90px; /* Space below client info */
 }
 
 
@@ -432,6 +445,7 @@ width: 22.01px;
 height: 22.01px;
 
 }
+
 .testimonialCard p{
 
 font-style: normal;
@@ -485,18 +499,20 @@ letter-spacing: 0.2px;
 color: #FFFFFF;
 
 }
-.container .contentGrid{
-    width: 100%;
-    
-}
+
 .contentGrid{
 /* row */
-display: flex;
-flex-direction: row;
-justify-content:center;
-align-items: flex-start;
-padding: 0px 15px;
-gap: 70px;
+ display: flex;
+    flex-direction: row;
+  /* IMPORTANT: Allows cards to go to the next line if they don't fit */
+    justify-content: center; /* Centers cards horizontally (useful if they wrap) */
+    align-items: flex-start; /* Aligns cards to the top of the row */
+    margin: 0 auto; /* Centers the flex container itself */
+    gap: 21px; /* Gap between cards */
+    max-width: 1200px; /* Ensure the grid itself doesn't exceed 1200px, but remember the container's padding! */
+    padding: 0 20px; /* If you want padding *inside* the grid itself, but then its effective width is smaller */
+
+
 
 }
 
@@ -509,7 +525,8 @@ flex-direction: column;
 align-items:flex-end;
 padding: 10px 20px;
 gap: 15px;
-
+overflow: hidden;
+position: relative;
 
 }
 .cardText{
@@ -525,59 +542,6 @@ gap: 15px;
 
 
 
-
-}
-.content-card {
-
-    border-radius: 10px;
-
-    background-size: cover;
-    
-    background-repeat: no-repeat;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: flex; /* To contain the overlay and its content */
-    flex-direction: row;
-    
-}
-
-.card-overlay {
-    
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%); /* Dark gradient overlay */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Aligns content to the bottom */
-    padding: 20px;
-    color: #fff;
-    text-align: left; /* Align text within the card to the left */
-}
-
-.card-category {
-    font-size: 0.85em;
-    font-weight: 600;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-.card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    color: #fff;
-}
-
-.btn-card-project {
-    background-color: #4a90e2; /* Blue button color */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9em;
-    align-self: flex-start; /* Align button to the left within the flex column */
-   
 }
 
 .cardText span{
@@ -684,8 +648,10 @@ color: #FFFFFF;
 /* Footer Section */
 .mainFooter {
     background-color: #252b42; /* Dark blue/gray background */
-    padding: 80px 0; /* Vertical padding */
+    padding: 50px 0; /* Vertical padding */
     color: #fff; /* Default white text color for the footer */
+
+    margin-bottom: 50px;
 }
 
 .footerColumns {
@@ -693,28 +659,43 @@ color: #FFFFFF;
     justify-content: space-between; /* Distributes columns with space between */
     flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
     gap: 30px; /* Space between columns */
-    max-width: 1200px; /* Max width for the columns container */
+ /* Max width for the columns container */
     margin: 0 auto; /* Center the columns */
     padding: 0 20px; /* Horizontal padding */
 }
 
 .footerColumn {
-    flex-basis: calc(20% - 30px); /* Approx 1/5th width for 5 columns, accounting for gap */
+   /* Approx 1/5th width for 5 columns, accounting for gap */
     min-width: 180px; /* Minimum width for columns before wrapping */
     text-align: left;
 }
 
-.columnTitle {
+.footerColumn h5{
    
-    font-size: 1.2em;
-    font-weight: 700; /* Bold as per design */
-    color: #fff; /* White title */
-    margin-bottom: 25px; /* Space below title */
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+letter-spacing: 0.1px;
+
+/* light-text-color */
+color: #FFFFFF;
+margin-bottom: 20px;
+
 }
 
 .columnList {
     list-style: none; /* Remove default list bullets */
     padding: 0;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+
+
 }
 
 .columnList li {
@@ -741,10 +722,348 @@ color: #FFFFFF;
     display: flex; /* Use flex to align icon and text */
     align-items: center; /* Vertically center icon and text */
     color: #cad6e0; /* Light gray-blue for contact text */
+    gap: 8px;
 }
 
 .contactList li i {
     color: #4a90e2; /* Blue for icons */
     font-size: 1.1em;
     margin-right: 10px; /* Space between icon and text */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Navbar */
+    .navbar img { /* BrandName logo */
+        max-width: 180px;
+        height: auto;
+    }
+    .nav-links ul {
+        flex-direction: column; /* Stack nav links */
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .nav-buttons {
+      display: none;
+      
+    }
+
+    /* Hero Section */
+    .heroSection {
+        height: 100vh; /* Might need to be taller for all content */
+        margin-top: -200px; /* Adjust if header height changes */
+        padding-top: 80px; /* Push content down from top edge */
+    }
+    .bannerContent h1 {
+        font-size: 40px;
+        line-height: 57px;
+        text-align: center;
+    }
+    .bannerContent p {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .bannerList {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .bannerList li {
+      
+        max-width: 187px;
+    }
+
+    /* Features Section */
+    .featuresSection {
+        padding: 80px 0; /* Reduce padding */
+    }
+    .featuresGrid {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding: 20px 0;
+    }
+    .featureItem {
+        padding: 40px 50px; /* Adjust padding */
+        max-width: 325px;
+
+    }
+    .featureItem h3 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .featureItem p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    /* Testimonials Section */
+    .testimonialsSection {
+        padding-bottom: 35px; /* Reduce bottom padding */
+    }
+    .testimonialsHeader {
+        margin-bottom: 60px;
+    }
+    .testimonialsHeader h2 {
+        font-size: 40px;
+        line-height: 57px;
+    }
+    .testimonialsHeader p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .testimonialsGrid {
+        gap: 30px;
+
+        display: flex;
+        flex-direction: column;
+        padding: 0 45px;
+    
+        
+    }
+    .testimonialCard {
+        padding: 30px 40px;
+         gap: 15px;
+    }
+    
+    .clientImg img {
+       display: none;
+    }
+    .clientDetails h3, .clientDetails p {
+        text-align: left; /* Center client details */
+    }
+    .stars {
+        justify-content: left; /* Center stars */
+    }
+
+
+    /* Content Cards Section */
+    .contentSection {
+        padding: 75px 0;
+    }
+    .sectionHeader {
+        margin-bottom: 60px;
+        text-align: center;
+        align-items: center;
+    }
+    .sectionHeader h2 {
+        font-size: 40px;
+        line-height: 57px;
+        margin-bottom: 30px;
+    }
+    .sectionHeader p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .contentGrid {
+       display: flex;
+       flex-direction: column;
+       gap: 100px;
+    align-items: center;
+    }
+    .contentCard {
+        height: 380px; /* Adjust height */
+        padding-top: 100px;
+    }
+    .cardText {
+        padding: 22px;
+    }
+    .cardText h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .cardText a {
+        padding: 10px 36px;
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .footerColumns {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       padding-top: 200px;
+    }
+    .footerColumn {
+        text-align:left; /* Center content */
+        margin-bottom: 32px; /* Space between stacked columns */
+    }
+    .footerColumn:last-child { /* No margin for the very last column */
+        margin-bottom: 0;
+    }
+    .columnList {
+        align-items:left; /* Center list items */
+    }
+    .contactList li {
+        justify-content:left; /* Center contact icons */
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px; /* Slightly less padding on sides */
+    }
+  .contentGrid{
+        gap: 21px; /* Keep your desired gap */
+        flex-wrap: wrap;
+        padding: 0 15px; /* Adjust padding as needed */
+  }
+ .testimonialsGrid{
+    margin: auto;
+   padding:50px;
+ }
+
+ .footerColumns{
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .footerColumn{
+    text-align: center;
+    align-items: center;
+ }
+
+ .columnList {
+
+align-items: center;
+text-align: center;
+ }
+  
+
+    /* No specific navbar changes here unless desired */
+}
+
+@media (max-width: 992px) {
+    /* Navbar */
+    .navbar {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+        gap: 30px; /* Gap between wrapped items */
+    }
+    .navbar img { /* BrandName logo */
+        width: 187px;
+    }
+    .nav-links ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .nav-buttons {
+        display:  none;
+    }
+
+    
+
+    /* Hero Section */
+    .heroSection {
+        height: 80vh; /* Adjust height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content on smaller screens */
+    }
+    .bannerContent {
+        text-align: center; /* Center text content */
+        width: 100%; /* Allow content to take more width */
+        padding: 0 15px;
+    }
+    .bannerContent h1 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .bannerContent p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .bannerList {
+        justify-content: center; /* Center buttons */
+    }
+
+    /* Features Section */
+    .featuresGrid {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center stacked items */
+    }
+    .featureItem {
+        flex-basis: 90%; /* Take more width when stacked */
+        max-width: 450px; /* Limit max width */
+        padding: 30px;
+    }
+   .featureItem h3{
+    font-size: 20px;
+    line-height: 45px;
+   }
+     .featureItem p{
+        font-size: 16px;
+        line-height: 20px;
+     }
+    /* Testimonials Section */
+    .testimonialsGrid {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center stacked cards */
+      /* Smaller gap when stacked */
+        padding: 0 20px 80px 20px; /* Adjust padding */
+    }
+    .testimonialCard {
+        flex: 0 1 90%; /* Take more width when stacked */
+        max-width: 500px;
+    }
+
+    /* Content Cards Section */
+    .contentGrid {
+       flex-direction: row;
+       flex-wrap: wrap;
+       padding: 0px 20px;
+       gap:40px;
+    
+       position: relative;
+    }
+.sectionHeader p{
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.cardImg1{
+   
+    width:300px;
+    height: 400px;
+    padding-top:150px ;
+   
+   
+}
+
+.cardImg2{
+   
+    width:300px;
+    height: 400px;
+    padding-top:150px ;
+}
+
+
+.cardImg3{
+  
+    width:300px;
+    height: 400px;
+   padding-top:150px ;
+}
+
+.cardImg4{
+    /* filter */
+    width:300px;
+    height: 400px;
+      padding-top:150px ;
+}
+
+.cardText h3{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+    .footerColumn:nth-last-child(1),
+    .footerColumn:nth-last-child(2) { /* No bottom margin on last 2 if it's two rows */
+        margin-bottom: 0;
+    }
 }
