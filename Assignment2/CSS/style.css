@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Heebo:wght@100..900&display=swap');
 
 *{
@@ -14,11 +13,15 @@ body{
 /* Container styles */
 .heading {
     display: flex;
-    justify-content:space-evenly;
+    flex-direction: row;
+    justify-content:space-between;
     align-items: center; /* Aligns items vertically */
     margin-bottom: 80px;
-    gap:1400px;
 
+}
+
+.heading i{
+    display: none;
 }
 
 /* Logo styles */
@@ -27,7 +30,9 @@ body{
     width: auto;
     object-fit: cover;
 }
-
+.navBar {
+    padding: 20px;
+}
 /* Navigation styles */
 .navBar .navLinks {
     display: flex;
@@ -59,14 +64,14 @@ body{
 
 .banner{
     display:flex;
-    justify-content: space-evenly;
-    gap: 350px;
+    flex-direction: row;
+    justify-content:space-evenly;
+    gap:106px;
 
 }
 .bannerData{
 
-    margin-bottom:30px;
-
+  margin-bottom: 71px;
 }
 
 .bannerData h1 {
@@ -80,19 +85,21 @@ body{
     font-size: 16px;
     line-height: 25px;
     font-weight: 400;
+ 
     margin-bottom:30px;
 }
 
 .bannerData a {
    font-size: 20px;
    font-weight: 500;
-   line-height: 100%;
+   line-height: 1.0rem;
    background-color: #FF6464;
    border-radius: 2px;
    border: 1px dashed #000000;
    text-decoration: none;
    padding: 8px;
    color:white;
+   
    
 }
 
@@ -117,9 +124,9 @@ body{
 
 .text{
        display: flex;
-      justify-content:flex-start; /* left + right alignment */
+      justify-content:space-between; /* left + right alignment */
       align-items: center;  
-      gap: 930px; 
+    
 }
 
     .text h4 {
@@ -134,22 +141,24 @@ body{
       font-size: 16px;
       text-decoration: none;
       color: #007bff;
-      line-height: 100%;
+      line-height: 1.0;
       text-align: right;
     }
-
-
     .card{
-        display: flex;
-        gap: 20px;
-       padding-bottom: 30px;
-    
+         display: flex;
+    flex-direction: row; /* Default for desktop: side-by-side */
+    justify-content: space-evenly; /* Distributes cards with space around them */
+    gap: 40px; /*  Space between the two cards */
    
+
     }
+.post .container .card .c1{
+    margin-bottom: 30px;
+}
     .c1{
         background-color:white;
-      width: 50%;
-
+        
+    flex: 1 1 calc(50% - 20px); /* Allows cards to grow/shrink, taking roughly 50% minus gap */
     border-radius: 4px;
     padding: 40px;
 
@@ -294,4 +303,190 @@ display: flex;
 
 .smallText{
     padding: 0 30px;
+}
+
+/* Media Queries */
+
+/* For screens up to 768px wide (typical for tablets in portrait and smaller desktops) */
+@media (max-width: 768px) {
+
+    .container{
+        padding: 0 20px;
+    }
+
+    .container .card .c1{
+        width: 100%;
+    }
+
+    .heading i{
+        display: flex;
+ position: absolute;
+        top: 20px;
+        right: 0;
+        font-size: 30px;
+        padding:  20px;
+    }
+  .bannerBack{
+    margin-bottom: 59px;
+  }
+    .banner {
+        flex-direction: column-reverse; /* Image on top, data below */
+        align-items: center;
+        text-align: center;
+    }
+     
+.navBar{
+    display: none;
+}
+ 
+    .bannerData h1 {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 21px;
+    }
+     .bannerData p {
+        font-size: 16px;
+        line-height: 1.5rem;
+        margin-bottom: 27px;
+    }
+
+    .imgStyle img {
+       width: 174px;
+        height: 180px;
+    }
+
+    .text h4{
+        font-size: 18px;
+        line-height: 60px;
+        margin: auto;
+    }
+
+    .text span {
+display: none; 
+
+    }
+
+    .card {
+        flex-direction: column;
+          align-items: center; /* Center stacked cards */
+        gap: 30px; /* Adjust gap when stacked */
+       
+    }
+
+    .c1{
+         padding: 20px; /* Slightly less padding on mobile cards */
+        flex-basis: 100%; /* Allow cards to take full width */
+        max-width: 100%; /* Limit max width for readability */
+    } 
+.c1 h2{
+    font-size: 22px;
+    line-height: 30px;
+}
+.c1 span{
+    font-size: 16px;
+}
+.c1 p{
+    font-size: 16px;
+    
+}
+    .c1 {
+        width: 20px;;
+        flex-wrap: wrap;
+        height: 266px;
+        
+    }
+
+
+
+    .featuresHold > span {
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+        line-height: 60px;
+        display: block;
+
+    }
+.data{
+    text-align: left;
+}
+
+.data h2{
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 16px;
+}
+
+.info{
+margin-bottom: 26px;
+}
+
+
+    .featuresData {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .featuresData img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+   
+
+ 
+
+    .footerContent {
+        margin-left: 0;
+    }
+}
+
+/* For screens up to 992px wide (typical for tablets in landscape and smaller laptops) */
+@media (max-width: 992px) {
+   
+   .container{
+ padding: 0 20px;
+   }
+   
+    .banner {
+        gap: 50px;
+        padding: 0 20px;
+    }
+
+    .bannerData h1 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    .text {
+        gap: 400px; /* Adjust gap for better alignment */
+        padding: 0 20px;
+    }
+
+    .card {
+        padding: 0 20px 30px;
+    }
+
+    .c1 {
+        width: 48%; /* Keep them side by side but slightly smaller */
+        padding: 30px;
+    }
+
+    .featuresHold > span {
+        padding-left: 20px;
+    }
+
+    .featuresData {
+        padding: 0 20px;
+    }
+}
+
+/* For screens up to 1024px wide (typical for larger tablets and small desktops) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px; /* Adjust container width */
+    }
+    
 }
