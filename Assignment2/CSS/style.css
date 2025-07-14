@@ -70,7 +70,7 @@ body{
 
 }
 .bannerData{
-
+  padding:20px;
   margin-bottom: 71px;
 }
 
@@ -79,6 +79,7 @@ body{
     font-weight: 700;
     line-height: 60px;
     margin-bottom: 25px;
+    
 }
 
 .bannerData p {
@@ -90,6 +91,7 @@ body{
 }
 
 .bannerData a {
+    display: inline-block;
    font-size: 20px;
    font-weight: 500;
    line-height: 1.0rem;
@@ -97,7 +99,7 @@ body{
    border-radius: 2px;
    border: 1px dashed #000000;
    text-decoration: none;
-   padding: 8px;
+   padding: 15px;
    color:white;
    
    
@@ -123,6 +125,7 @@ body{
 }
 
 .text{
+    padding: 20px;
        display: flex;
       justify-content:space-between; /* left + right alignment */
       align-items: center;  
@@ -145,6 +148,7 @@ body{
       text-align: right;
     }
     .card{
+        padding: 20px;
          display: flex;
     flex-direction: row; /* Default for desktop: side-by-side */
     justify-content: space-evenly; /* Distributes cards with space around them */
@@ -201,6 +205,10 @@ body{
   gap: 40px;       
 }
 
+
+.featuresHold {
+    padding: 20px;
+}
 .featuresHold > span{
  
     line-height: 60px;
@@ -281,6 +289,9 @@ display: flex;
   gap: 12px; /* space between icons and text */
 }
 
+.fa{
+font-size: 30px;
+}
 
 .socialMedia {
   list-style: none;
@@ -313,7 +324,9 @@ display: flex;
     .container{
         padding: 0 20px;
     }
-
+.features{
+margin-bottom: 150px;
+}
     .container .card .c1{
         width: 100%;
     }
@@ -350,7 +363,12 @@ display: flex;
         margin-bottom: 27px;
     }
 
+      .imgStyle{
+        padding: 20px;
+      }
+
     .imgStyle img {
+
        width: 174px;
         height: 180px;
     }
@@ -395,7 +413,6 @@ display: none;
         height: 266px;
         
     }
-
 
 
     .featuresHold > span {
