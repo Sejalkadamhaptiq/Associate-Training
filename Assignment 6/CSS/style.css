@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Heebo:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Heebo:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body{
-    font-family: 'Work Sans','sans serif';
+    font-family: 'Crimson Text','Work Sans','sans serif';
     margin:0;
 }
 
@@ -39,7 +39,9 @@ position: relative;
 .logo{
     height: 50px;
 }
-
+.navBar{
+      font-family:'Work Sans';
+}
 .navBar ul{
     display: flex;
     flex-direction: row;
@@ -781,17 +783,16 @@ color: #212529;
 }
 .bannerBack .container{
     flex-direction: column-reverse;
-    gap: 60px;
+   gap: 20px;
 }
 
-.bannerImg {
-  width: 100%;
+.bannerImg img{
+    width:100% ;
 }
 .logo {
     width: 129px;
 }
-.bannerBack .container .bannerImg{
-}
+
 
 .bannerData{
     gap: 35px;
@@ -929,14 +930,13 @@ margin: 0 auto;
     flex-direction: column-reverse;
     gap: 30px;
 }
-.logo img{
+.logo {
     width: 129px;
-    height: 38px;
 }
 
-.bannerImg img{
-    width: 400px;
-    height: 400px;
+.bannerImg{
+    width: 100%;
+
 }
 
 .bannerBack .container .bannerImg{
