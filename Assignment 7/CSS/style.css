@@ -14,11 +14,11 @@ body{
     /* Frame 26 */
 
 /* Auto layout */
-display: flex;
+/* display: flex;
 flex-direction: column;
 align-items: center;
 padding: 0px;
-gap: 55px;
+gap: 55px; */
 
 
 }
@@ -75,22 +75,8 @@ gap: 55px;
      
 }
 
-.cardTextContent a{
- align-self: flex-start;
-}
 .cardDatareverse{
     flex-direction: row-reverse; /* Image right, text left */
-}
-.teamMember{
-    /* Frame 23 */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-padding: 0px;
-gap: 19px;
-width: 292px;
-height: 299px;
 }
 
 .data{
@@ -123,17 +109,7 @@ color: #74C69D;
 
 }
 
-.teamSection .container{
-    /* Frame 29 */
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-gap: 45px;
-
-}
 
 .linkButton{
 
@@ -152,15 +128,15 @@ padding: 13px 33px;
     padding: 49px 0;
 }
 
-.footerContent i{
+/* .footerContent i{
     color: #FFFFFF;
 }
 
 .footerContent span{
     color: #FFFFFF;
-}
+} */
 
-.partner-logo-grid {
+.partnerLogo {
         display: flex;
         flex-direction:row;
         justify-content:flex-start;
