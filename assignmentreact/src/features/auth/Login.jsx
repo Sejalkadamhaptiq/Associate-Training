@@ -1,48 +1,4 @@
-// // src/pages/Login.jsx
-// import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { login } from "../../redux/authSlice";
-// import { useNavigate } from "react-router-dom";
 
-// const Login = () => {
-//   const [form, setForm] = useState({ email: "", password: "" });
-//   const dispatch = useDispatch();
-//   const navigate = useNavigate();
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     dispatch(login(form));
-//     navigate("/");
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <h2>Login</h2>
-//       <input
-//         type="email"
-//         placeholder="Email"
-//         required
-//         value={form.email}
-//         onChange={(e) => setForm({ ...form, email: e.target.value })}
-//       />
-//       <br />
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         required
-//         value={form.password}
-//         onChange={(e) => setForm({ ...form, password: e.target.value })}
-//       />
-//       <br />
-//       <button type="submit">Login</button>
-//     </form>
-//   );
-// };
-
-// export default Login;
-
-
-// src/pages/Login.jsx
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/authSlice";
