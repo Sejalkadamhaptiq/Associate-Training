@@ -64,7 +64,7 @@ const ProductList = () => {
     .sort((a, b) => {
       if (sortBy === 'price-low-high') return a.price - b.price;
       if (sortBy === 'price-high-low') return b.price - a.price;
-       if (sortBy === 'rating') return b.rating?.rate - a.rating?.rate;
+       if (sortBy === 'rating') return b.rating - a.rating;
       return 0;
     });
 
