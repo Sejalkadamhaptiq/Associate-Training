@@ -25,7 +25,7 @@ const authSlice = createSlice({
         state.currentUser = newUser;
         localStorage.setItem("auth", JSON.stringify(state));
       } 
-      // ⚠️ Do not return anything from reducers
+     
     },
 
     login: (state, action) => {

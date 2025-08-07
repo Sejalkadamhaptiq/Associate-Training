@@ -33,7 +33,7 @@ const Cart = () => {
         <i className="bi bi-cart-x-fill empty-cart-icon"></i>
         <h2 className="mt-4">Your Cart is Empty</h2>
         <p className="text-muted">Looks like you haven't added anything to your cart yet.</p>
-        <button onClick={() => navigate('/')} className="btn btn-primary-custom mt-3">
+        <button onClick={() => navigate('/product')} className="btn btn-primary-custom mt-3">
           Continue Shopping
         </button>
       </div>

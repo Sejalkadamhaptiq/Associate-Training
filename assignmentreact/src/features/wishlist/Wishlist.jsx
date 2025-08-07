@@ -31,7 +31,7 @@ const Wishlist = () => {
         <i className="bi bi-heartbreak-fill empty-state-icon text-danger"></i>
         <h2 className="mt-4 fw-bold">Your Wishlist is Empty</h2>
         <p className="text-muted">Explore our products and save your favorites to view them here.</p>
-        <Button onClick={() => navigate('/')} className="btn-primary-custom mt-3">
+        <Button onClick={() => navigate('/product')} className="btn-primary-custom mt-3">
           Discover Products
         </Button>
       </div>
