@@ -253,12 +253,10 @@ const ProductDetails = () => {
         {/* --- Product Image Gallery --- */}
         <Col md={6}>
           <Image
-            src={activeImage || product.thumbnail}
-            alt={product.title}
-            fluid
-            rounded
-            style={{height:'400px' , width:'400px'}}
-            className="main-product-image mb-3"
+              src={product.image || product.thumbnail}
+  alt={product.title}
+  className="img-fluid rounded"
+  style={{ maxHeight: '400px', maxWidth: '400px', objectFit: 'contain' }}
           />
           <Stack direction="horizontal" gap={2} className="thumbnail-list">
             {product.images.slice(0, 5).map((img, idx) => (

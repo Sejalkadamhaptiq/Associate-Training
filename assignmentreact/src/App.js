@@ -12,7 +12,7 @@ import PrivateRoute from './component/PrivateRoute';
 import Login from './features/auth/Login';
 import Signup from './features/auth/Signup';
 import Logout from './features/auth/Logout';
-import PaymentOptions from './pages/PayementOptions';
+import PaymentOptions from './pages/PaymentOptions';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
