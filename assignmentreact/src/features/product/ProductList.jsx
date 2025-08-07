@@ -11,7 +11,6 @@ import {
   InputGroup,
   Dropdown,
   Card,
-  Spinner,
   Alert,
   Placeholder,
 } from 'react-bootstrap';
@@ -64,7 +63,7 @@ const ProductList = () => {
     .sort((a, b) => {
       if (sortBy === 'price-low-high') return a.price - b.price;
       if (sortBy === 'price-high-low') return b.price - a.price;
-      if (sortBy === 'rating') return b.rating.rate - b.rating.rate; // Assuming rating is an object { rate, count }
+      if (sortBy === 'rating') return b.rating - b.rating.rate; // Assuming rating is an object { rate, count }
       return 0;
     });
 
