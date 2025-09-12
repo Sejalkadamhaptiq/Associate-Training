@@ -13,14 +13,13 @@ const Cart = () => {
 
   // --- Calculations ---
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const shippingFee = subtotal > 500 || subtotal === 0 ? 0 : 50; // Example: Free shipping over $500
-  const total = subtotal + shippingFee;
+
 
   const handleGoToPayment = () => {
     if (!isAuthenticated) {
       // Using a more specific message before redirecting
       alert("Please log in to proceed to checkout.");
-      navigate("/signup");
+      navigate("/login");
     } else {
       navigate("/payment");
     }
@@ -89,14 +88,11 @@ const Cart = () => {
                 <span>Subtotal</span>
                 <strong>${subtotal.toFixed(2)}</strong>
               </div>
-              <div className="d-flex justify-content-between mb-3">
-                <span>Shipping</span>
-                <strong>{shippingFee > 0 ? `$${shippingFee.toFixed(2)}` : 'Free'}</strong>
-              </div>
+              
               <hr />
               <div className="d-flex justify-content-between fw-bold fs-5 my-3">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="d-grid">
                  <button className="btn btn-primary-custom btn-lg" onClick={handleGoToPayment}>

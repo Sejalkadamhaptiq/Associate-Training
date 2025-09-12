@@ -50,10 +50,12 @@ const Navbar = () => {
               variant="outline-primary"
               size="sm"
               className="btn-logout ms-lg-3"
-              onClick={() => navigate('/signup')} // Assuming logout is handled on the signup/login page
+              onClick={() => navigate('/logout')} // Assuming logout is handled on the signup/login page
             >
               Logout
             </Button>
+
+            
           </Nav>
         </BsNavbar.Collapse>
       </Container>

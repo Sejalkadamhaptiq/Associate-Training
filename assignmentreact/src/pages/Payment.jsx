@@ -23,8 +23,7 @@ const Payment = () => {
   // Calculations
   const subtotal = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0);
   const shippingFee = subtotal > 0 ? 15.00 : 0; // Example fixed shipping fee
-  const taxes = subtotal * 0.08; // Example 8% tax
-  const total = subtotal + shippingFee + taxes;
+  const total = subtotal + shippingFee;
 
   const handleProceed = () => {
     // Here you would typically validate form inputs before proceeding
@@ -152,10 +151,7 @@ const Payment = () => {
                   <span>Shipping</span>
                   <strong>${shippingFee.toFixed(2)}</strong>
                 </li>
-                <li className="list-group-item d-flex justify-content-between">
-                  <span>Taxes (8%)</span>
-                  <strong>${taxes.toFixed(2)}</strong>
-                </li>
+              
                 <li className="list-group-item d-flex justify-content-between fs-5 fw-bold total-row">
                   <span>Total (USD)</span>
                   <span>${total.toFixed(2)}</span>

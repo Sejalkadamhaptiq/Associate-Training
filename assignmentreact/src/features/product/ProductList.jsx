@@ -58,10 +58,9 @@ const ProductList = () => {
     .filter((product) =>
       category === 'all' ? true : product.category === category
     )
-    .filter((product) =>
-      product.title.toLowerCase().includes(search.toLowerCase())
-    )
-    .sort((a, b) => {
+   .filter((product) =>
+  product.title.toLowerCase().startsWith(search.toLowerCase())
+).sort((a, b) => {
       if (sortBy === 'price-low-high') return a.price - b.price;
       if (sortBy === 'price-high-low') return b.price - a.price;
        if (sortBy === 'rating') return b.rating - a.rating;
@@ -130,7 +129,7 @@ const ProductList = () => {
               {categoryStatus === 'loading' ? (
                 <option>Loading categories...</option>
               ) : (
-                ['all', ...categories].slice(0,4).map((cat, index) => (
+                ['all', ...categories].slice(0,5).map((cat, index) => (
                   <option key={index} value={cat}>
                     {cat.charAt(0).toUpperCase() + cat.slice(1)}
                   </option>

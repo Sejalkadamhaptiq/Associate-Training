@@ -40,8 +40,8 @@ const productSlice = createSlice({
     error: null,
     categories: [],
     categoryStatus: 'idle',
-    selectedProduct: null,        // 👈 already correct
-    selectedProductStatus: 'idle' // 👈 already correct
+    selectedProduct: null,        
+    selectedProductStatus: 'idle' 
   },
   reducers: {},
   extraReducers: builder => {

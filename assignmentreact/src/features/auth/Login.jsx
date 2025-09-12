@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { toast } from "react-toastify";
 import bcrypt from "bcryptjs";
@@ -20,7 +20,7 @@ const handleSubmit = async (e) => {
   if (user && bcrypt.compareSync(form.password, user.password)) {
     await dispatch(login(form));
     toast.success("Login successful!");
-    navigate("/");
+    navigate("/cart");
   } else {
     toast.error("Invalid credentials");
   }
@@ -57,6 +57,7 @@ const handleSubmit = async (e) => {
           <Button style={{backgroundColor:'#088395'}} type="submit" className="w-100">
             Login
           </Button>
+            <Link to="/signup">SignUp</Link>
         </Form>
       </Card>
     </Container>

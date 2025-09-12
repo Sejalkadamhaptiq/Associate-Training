@@ -2,7 +2,6 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../component/Header';
 import Footer from '../component/Footer';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -18,7 +17,7 @@ function MainLayout() {
 
       {/* Footer sticks to the bottom when content is short */}
       <Footer />
-        <ToastContainer position="bottom-right" autoClose={2000} />
+      <ToastContainer position="bottom-right" autoClose={2000} />
     </div>
   );
 }

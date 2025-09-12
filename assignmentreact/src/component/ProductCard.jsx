@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Button, Badge} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -23,6 +23,7 @@ const ProductCard = ({ product }) => {
 
   const handleAddToWishlist = () => {
     dispatch(addToWishlist(product));
+      toast.success(`${product.title} added to wishlist!`, { autoClose: 1500 });
   };
 
   const inStock = product.stock > 0;

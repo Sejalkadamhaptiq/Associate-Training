@@ -10,7 +10,7 @@ export const store = configureStore({
      products: productReducer,
      cart: cartReducer,
      wishlist: wishlistReducer,
-    auth: authReducer,
+     auth: authReducer,
   },
    devTools: true, // ✅ enables Redux DevTools
 });

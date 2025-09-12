@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +16,7 @@ import {
 import { toast } from 'react-toastify';
 
 import { fetchProducts, fetchProductById } from '../../redux/productSlice';
-import { addToCart } from '../../redux/cardSlice';
+import { addToCart, increaseQuantity, decreaseQuantity } from '../../redux/cardSlice';
 import { addToWishlist } from '../../redux/wishlistSlice';
 
 // --- Skeleton Loader Component ---
@@ -49,7 +47,6 @@ const ProductDetailSkeleton = () => (
   </Container>
 );
 
-// --- Main Product Details Component ---
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -59,6 +56,9 @@ const ProductDetails = () => {
 
   const { items: allProducts } = useSelector((state) => state.products);
   const { selectedProduct: product, selectedProductStatus: status } = useSelector((state) => state.products);
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const cartItem = cartItems.find((i) => i.id === product?.id);
 
   useEffect(() => {
     dispatch(fetchProductById(id));
@@ -80,7 +80,7 @@ const ProductDetails = () => {
   }, [product, allProducts]);
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ ...product, quantity }));
+      dispatch(addToCart({ ...product, quantity }));
     toast.success(`${product.title} added to cart!`);
   };
 
@@ -111,10 +111,10 @@ const ProductDetails = () => {
         {/* --- Product Image Gallery --- */}
         <Col md={6}>
           <Image
-              src={product.image || product.thumbnail}
-  alt={product.title}
-  className="img-fluid rounded"
-  style={{ maxHeight: '400px', maxWidth: '400px', objectFit: 'contain' }}
+            src={product.image || product.thumbnail}
+            alt={product.title}
+            className="img-fluid rounded"
+            style={{ maxHeight: '400px', maxWidth: '400px', objectFit: 'contain' }}
           />
           <Stack direction="horizontal" gap={2} className="thumbnail-list">
             {product.images.slice(0, 5).map((img, idx) => (
@@ -149,11 +149,36 @@ const ProductDetails = () => {
 
           <p className="product-description">{product.description}</p>
 
+          {/* --- Quantity Control --- */}
           <div className="d-flex align-items-center gap-3 my-4">
             <strong>Quantity:</strong>
-            <Button variant="outline-secondary" size="sm" onClick={() => setQuantity(q => Math.max(1, q - 1))}>−</Button>
-            <span className="fw-semibold fs-5">{quantity}</span>
-            <Button variant="outline-secondary" size="sm" onClick={() => setQuantity(q => q + 1)}>+</Button>
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={() => {
+                if (cartItem) {
+                  dispatch(decreaseQuantity(product.id));
+                } else {
+                  setQuantity(q => Math.max(1, q - 1));
+                }
+              }}
+            >−</Button>
+
+            <span className="fw-semibold fs-5">
+              {cartItem ? cartItem.quantity : quantity}
+            </span>
+
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={() => {
+                if (cartItem) {
+                  dispatch(increaseQuantity(product.id));
+                } else {
+                  setQuantity(q => q + 1);
+                }
+              }}
+            >+</Button>
           </div>
 
           <Stack direction="horizontal" gap={3}>
@@ -170,38 +195,38 @@ const ProductDetails = () => {
       {/* --- Details Accordion & Reviews --- */}
       <Row className="mt-5 pt-4 border-top">
         <Col lg={7}>
-            <h3 className="section-title mb-3">Product Details</h3>
-            <Accordion defaultActiveKey="0" flush className="product-accordion">
-                {['warrantyInformation', 'shippingInformation', 'returnPolicy'].map((key, i) => (
-                    <Accordion.Item eventKey={i.toString()} key={key}>
-                        <Accordion.Header>{key.replace(/([A-Z])/g, ' $1').trim()}</Accordion.Header>
-                        <Accordion.Body>{product[key]}</Accordion.Body>
-                    </Accordion.Item>
-                ))}
-                <Accordion.Item eventKey="3">
-                  <Accordion.Header>QR Code</Accordion.Header>
-                  <Accordion.Body>
-                    {product.meta?.qrCode && <Image src={product.meta.qrCode} alt="Product QR Code" className="qr-code-image" />}
-                  </Accordion.Body>
-                </Accordion.Item>
-            </Accordion>
+          <h3 className="section-title mb-3">Product Details</h3>
+          <Accordion defaultActiveKey="0" flush className="product-accordion">
+            {['warrantyInformation', 'shippingInformation', 'returnPolicy'].map((key, i) => (
+              <Accordion.Item eventKey={i.toString()} key={key}>
+                <Accordion.Header>{key.replace(/([A-Z])/g, ' $1').trim()}</Accordion.Header>
+                <Accordion.Body>{product[key]}</Accordion.Body>
+              </Accordion.Item>
+            ))}
+            <Accordion.Item eventKey="3">
+              <Accordion.Header>QR Code</Accordion.Header>
+              <Accordion.Body>
+                {product.meta?.qrCode && <Image src={product.meta.qrCode} alt="Product QR Code" className="qr-code-image" />}
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </Col>
         <Col lg={5} className="mt-5 mt-lg-0">
-             <h3 className="section-title mb-3">Customer Reviews ({product.reviews.length})</h3>
-             <div className="reviews-container">
-                {product.reviews.length > 0 ? product.reviews.slice(0, 3).map((review, index) => (
-                    <Card key={index} className="review-card">
-                        <Card.Body>
-                           <div className="d-flex justify-content-between align-items-center">
-                              <Card.Title as="h6">{review.reviewerName}</Card.Title>
-                              <div className="review-rating">{renderStars(review.rating)}</div>
-                           </div>
-                           <Card.Text className="fst-italic text-muted">“{review.comment}”</Card.Text>
-                           <small className="text-secondary">{new Date(review.date).toLocaleDateString()}</small>
-                        </Card.Body>
-                    </Card>
-                )) : <p className="text-muted">No reviews yet.</p>}
-             </div>
+          <h3 className="section-title mb-3">Customer Reviews ({product.reviews.length})</h3>
+          <div className="reviews-container">
+            {product.reviews.length > 0 ? product.reviews.slice(0, 3).map((review, index) => (
+              <Card key={index} className="review-card">
+                <Card.Body>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Card.Title as="h6">{review.reviewerName}</Card.Title>
+                    <div className="review-rating">{renderStars(review.rating)}</div>
+                  </div>
+                  <Card.Text className="fst-italic text-muted">“{review.comment}”</Card.Text>
+                  <small className="text-secondary">{new Date(review.date).toLocaleDateString()}</small>
+                </Card.Body>
+              </Card>
+            )) : <p className="text-muted">No reviews yet.</p>}
+          </div>
         </Col>
       </Row>
 
@@ -212,16 +237,16 @@ const ProductDetails = () => {
           {relatedProducts.length > 0 ? relatedProducts.map((item) => (
             <Col key={item.id}>
               <Card className="h-100 product-card-related">
-                 <Link to={`/product/${item.id}`}>
-                    <Card.Img variant="top" src={item.thumbnail} className="related-product-img"/>
-                 </Link>
-                 <Card.Body>
-                    <Card.Title as="h6" className="related-product-title">{item.title}</Card.Title>
-                    <Card.Text className="fw-bold">${item.price}</Card.Text>
-                 </Card.Body>
-                 <Card.Footer>
-                    <Button as={Link} to={`/product/${item.id}`} variant="outline-dark" className="w-100">View Details</Button>
-                 </Card.Footer>
+                <Link to={`/product/${item.id}`}>
+                  <Card.Img variant="top" src={item.thumbnail} className="related-product-img"/>
+                </Link>
+                <Card.Body>
+                  <Card.Title as="h6" className="related-product-title">{item.title}</Card.Title>
+                  <Card.Text className="fw-bold">${item.price}</Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <Button as={Link} to={`/product/${item.id}`} variant="outline-dark" className="w-100">View Details</Button>
+                </Card.Footer>
               </Card>
             </Col>
           )) : <p className="text-center text-muted col-12">No recommendations available.</p>}
